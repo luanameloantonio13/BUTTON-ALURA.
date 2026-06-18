@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class JornadaCidadePerdida {
+    private static String estadoAtivo = "passo-0";
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            switch (estadoAtivo) {
+                case "passo-0":
+                    System.out.println("Um dia desses, dentro de um livro da biblioteca da escola, eu descobri uma carta antiga sobre uma cidade perdida, escondida por riquezas e belezas naturais. Nessa carta, a autora deixa algumas pistas para encontrar essa cidade e eu decidi segui-las!");
+                    System.out.println("Escolha seu próximo passo:");
+                    System.out.println("1 - Rio de Janeiro");
+                    System.out.println("2 - Pernambuco");
+                    String escolha0 = scanner.nextLine();
+                    if (escolha0.equals("1")) {
+                        estadoAtivo = "passo-1";
+                    } else if (escolha0.equals("2")) {
+                        estadoAtivo = "passo-2";
+                    } else {
+                        System.out.println("Escolha inválida. Tente novamente.");
+                    }
+                    break;
+
+                case "passo-1":
+                    System.out.println("Você começa sua jornada no Rio de Janeiro, subindo o Pico da Tijuca ao amanhecer para encontrar a primeira pista.");
+                    System.out.println("Escolha seu próximo passo:");
+                    System.out.println("1 - Procurar a pista no topo do pico");
+                    System.out.println("2 - Desistir e voltar para casa");
+                    String escolha1 = scanner.nextLine();
+                    if (escolha1.equals("1")) {
+                        estadoAtivo = "passo-3";
+                    } else if (escolha1.equals("2")) {
+                        estadoAtivo = "passo-4";
+                    } else {
+                        System.out.println("Escolha inválida. Tente novamente.");
+                    }
+                    break;
+
+                case "passo-2":
+                    System.out.println("Você escolheu Pernambuco. (Detalhes da jornada em Pernambuco não foram especificados.)");
+                    // Pode-se adicionar mais lógica aqui conforme necessário
+                    System.out.println("Fim da jornada para este caminho.");
+                    return;
+
+                case "passo-3":
+                    System.out.println("Você procura a pista no topo do pico e encontra uma mensagem misteriosa que indica o próximo passo da jornada.");
+                    System.out.println("Fim da jornada por enquanto.");
+                    return;
+
+                case "passo-4":
+                    System.out.println("Você desistiu e voltou para casa. Fim da jornada.");
+                    return;
+
+                default:
+                    System.out.println("Estado desconhecido. Encerrando.");
+                    return;
+            }
+        }
+    }
+}
+
